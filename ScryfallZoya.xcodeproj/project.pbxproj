@@ -1,0 +1,587 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		041505C82AFDB86600EA82DD /* ScryfallZoyaApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041505C72AFDB86600EA82DD /* ScryfallZoyaApp.swift */; };
+		041505CA2AFDB86600EA82DD /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041505C92AFDB86600EA82DD /* ContentView.swift */; };
+		041505CC2AFDB86800EA82DD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 041505CB2AFDB86800EA82DD /* Assets.xcassets */; };
+		041505CF2AFDB86800EA82DD /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 041505CE2AFDB86800EA82DD /* Preview Assets.xcassets */; };
+		041505D92AFDB86800EA82DD /* ScryfallZoyaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041505D82AFDB86800EA82DD /* ScryfallZoyaTests.swift */; };
+		041505E32AFDB86800EA82DD /* ScryfallZoyaUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041505E22AFDB86800EA82DD /* ScryfallZoyaUITests.swift */; };
+		041505E52AFDB86800EA82DD /* ScryfallZoyaUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041505E42AFDB86800EA82DD /* ScryfallZoyaUITestsLaunchTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		041505D52AFDB86800EA82DD /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 041505BC2AFDB86600EA82DD /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 041505C32AFDB86600EA82DD;
+			remoteInfo = ScryfallZoya;
+		};
+		041505DF2AFDB86800EA82DD /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 041505BC2AFDB86600EA82DD /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 041505C32AFDB86600EA82DD;
+			remoteInfo = ScryfallZoya;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		041505C42AFDB86600EA82DD /* ScryfallZoya.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ScryfallZoya.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		041505C72AFDB86600EA82DD /* ScryfallZoyaApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScryfallZoyaApp.swift; sourceTree = "<group>"; };
+		041505C92AFDB86600EA82DD /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		041505CB2AFDB86800EA82DD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		041505CE2AFDB86800EA82DD /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		041505D42AFDB86800EA82DD /* ScryfallZoyaTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ScryfallZoyaTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		041505D82AFDB86800EA82DD /* ScryfallZoyaTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScryfallZoyaTests.swift; sourceTree = "<group>"; };
+		041505DE2AFDB86800EA82DD /* ScryfallZoyaUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ScryfallZoyaUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		041505E22AFDB86800EA82DD /* ScryfallZoyaUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScryfallZoyaUITests.swift; sourceTree = "<group>"; };
+		041505E42AFDB86800EA82DD /* ScryfallZoyaUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScryfallZoyaUITestsLaunchTests.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		041505C12AFDB86600EA82DD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		041505D12AFDB86800EA82DD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		041505DB2AFDB86800EA82DD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		041505BB2AFDB86600EA82DD = {
+			isa = PBXGroup;
+			children = (
+				041505C62AFDB86600EA82DD /* ScryfallZoya */,
+				041505D72AFDB86800EA82DD /* ScryfallZoyaTests */,
+				041505E12AFDB86800EA82DD /* ScryfallZoyaUITests */,
+				041505C52AFDB86600EA82DD /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		041505C52AFDB86600EA82DD /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				041505C42AFDB86600EA82DD /* ScryfallZoya.app */,
+				041505D42AFDB86800EA82DD /* ScryfallZoyaTests.xctest */,
+				041505DE2AFDB86800EA82DD /* ScryfallZoyaUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		041505C62AFDB86600EA82DD /* ScryfallZoya */ = {
+			isa = PBXGroup;
+			children = (
+				041505C72AFDB86600EA82DD /* ScryfallZoyaApp.swift */,
+				041505C92AFDB86600EA82DD /* ContentView.swift */,
+				041505CB2AFDB86800EA82DD /* Assets.xcassets */,
+				041505CD2AFDB86800EA82DD /* Preview Content */,
+			);
+			path = ScryfallZoya;
+			sourceTree = "<group>";
+		};
+		041505CD2AFDB86800EA82DD /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				041505CE2AFDB86800EA82DD /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		041505D72AFDB86800EA82DD /* ScryfallZoyaTests */ = {
+			isa = PBXGroup;
+			children = (
+				041505D82AFDB86800EA82DD /* ScryfallZoyaTests.swift */,
+			);
+			path = ScryfallZoyaTests;
+			sourceTree = "<group>";
+		};
+		041505E12AFDB86800EA82DD /* ScryfallZoyaUITests */ = {
+			isa = PBXGroup;
+			children = (
+				041505E22AFDB86800EA82DD /* ScryfallZoyaUITests.swift */,
+				041505E42AFDB86800EA82DD /* ScryfallZoyaUITestsLaunchTests.swift */,
+			);
+			path = ScryfallZoyaUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		041505C32AFDB86600EA82DD /* ScryfallZoya */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 041505E82AFDB86800EA82DD /* Build configuration list for PBXNativeTarget "ScryfallZoya" */;
+			buildPhases = (
+				041505C02AFDB86600EA82DD /* Sources */,
+				041505C12AFDB86600EA82DD /* Frameworks */,
+				041505C22AFDB86600EA82DD /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ScryfallZoya;
+			productName = ScryfallZoya;
+			productReference = 041505C42AFDB86600EA82DD /* ScryfallZoya.app */;
+			productType = "com.apple.product-type.application";
+		};
+		041505D32AFDB86800EA82DD /* ScryfallZoyaTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 041505EB2AFDB86800EA82DD /* Build configuration list for PBXNativeTarget "ScryfallZoyaTests" */;
+			buildPhases = (
+				041505D02AFDB86800EA82DD /* Sources */,
+				041505D12AFDB86800EA82DD /* Frameworks */,
+				041505D22AFDB86800EA82DD /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				041505D62AFDB86800EA82DD /* PBXTargetDependency */,
+			);
+			name = ScryfallZoyaTests;
+			productName = ScryfallZoyaTests;
+			productReference = 041505D42AFDB86800EA82DD /* ScryfallZoyaTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		041505DD2AFDB86800EA82DD /* ScryfallZoyaUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 041505EE2AFDB86800EA82DD /* Build configuration list for PBXNativeTarget "ScryfallZoyaUITests" */;
+			buildPhases = (
+				041505DA2AFDB86800EA82DD /* Sources */,
+				041505DB2AFDB86800EA82DD /* Frameworks */,
+				041505DC2AFDB86800EA82DD /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				041505E02AFDB86800EA82DD /* PBXTargetDependency */,
+			);
+			name = ScryfallZoyaUITests;
+			productName = ScryfallZoyaUITests;
+			productReference = 041505DE2AFDB86800EA82DD /* ScryfallZoyaUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		041505BC2AFDB86600EA82DD /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1500;
+				LastUpgradeCheck = 1500;
+				TargetAttributes = {
+					041505C32AFDB86600EA82DD = {
+						CreatedOnToolsVersion = 15.0;
+					};
+					041505D32AFDB86800EA82DD = {
+						CreatedOnToolsVersion = 15.0;
+						TestTargetID = 041505C32AFDB86600EA82DD;
+					};
+					041505DD2AFDB86800EA82DD = {
+						CreatedOnToolsVersion = 15.0;
+						TestTargetID = 041505C32AFDB86600EA82DD;
+					};
+				};
+			};
+			buildConfigurationList = 041505BF2AFDB86600EA82DD /* Build configuration list for PBXProject "ScryfallZoya" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 041505BB2AFDB86600EA82DD;
+			productRefGroup = 041505C52AFDB86600EA82DD /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				041505C32AFDB86600EA82DD /* ScryfallZoya */,
+				041505D32AFDB86800EA82DD /* ScryfallZoyaTests */,
+				041505DD2AFDB86800EA82DD /* ScryfallZoyaUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		041505C22AFDB86600EA82DD /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				041505CF2AFDB86800EA82DD /* Preview Assets.xcassets in Resources */,
+				041505CC2AFDB86800EA82DD /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		041505D22AFDB86800EA82DD /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		041505DC2AFDB86800EA82DD /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		041505C02AFDB86600EA82DD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				041505CA2AFDB86600EA82DD /* ContentView.swift in Sources */,
+				041505C82AFDB86600EA82DD /* ScryfallZoyaApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		041505D02AFDB86800EA82DD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				041505D92AFDB86800EA82DD /* ScryfallZoyaTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		041505DA2AFDB86800EA82DD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				041505E32AFDB86800EA82DD /* ScryfallZoyaUITests.swift in Sources */,
+				041505E52AFDB86800EA82DD /* ScryfallZoyaUITestsLaunchTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		041505D62AFDB86800EA82DD /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 041505C32AFDB86600EA82DD /* ScryfallZoya */;
+			targetProxy = 041505D52AFDB86800EA82DD /* PBXContainerItemProxy */;
+		};
+		041505E02AFDB86800EA82DD /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 041505C32AFDB86600EA82DD /* ScryfallZoya */;
+			targetProxy = 041505DF2AFDB86800EA82DD /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		041505E62AFDB86800EA82DD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		041505E72AFDB86800EA82DD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		041505E92AFDB86800EA82DD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"ScryfallZoya/Preview Content\"";
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = Mahazoya.ScryfallZoya;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		041505EA2AFDB86800EA82DD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"ScryfallZoya/Preview Content\"";
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = Mahazoya.ScryfallZoya;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		041505EC2AFDB86800EA82DD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = Mahazoya.ScryfallZoyaTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ScryfallZoya.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/ScryfallZoya";
+			};
+			name = Debug;
+		};
+		041505ED2AFDB86800EA82DD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = Mahazoya.ScryfallZoyaTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ScryfallZoya.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/ScryfallZoya";
+			};
+			name = Release;
+		};
+		041505EF2AFDB86800EA82DD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = Mahazoya.ScryfallZoyaUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = ScryfallZoya;
+			};
+			name = Debug;
+		};
+		041505F02AFDB86800EA82DD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = Mahazoya.ScryfallZoyaUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = ScryfallZoya;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		041505BF2AFDB86600EA82DD /* Build configuration list for PBXProject "ScryfallZoya" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				041505E62AFDB86800EA82DD /* Debug */,
+				041505E72AFDB86800EA82DD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		041505E82AFDB86800EA82DD /* Build configuration list for PBXNativeTarget "ScryfallZoya" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				041505E92AFDB86800EA82DD /* Debug */,
+				041505EA2AFDB86800EA82DD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		041505EB2AFDB86800EA82DD /* Build configuration list for PBXNativeTarget "ScryfallZoyaTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				041505EC2AFDB86800EA82DD /* Debug */,
+				041505ED2AFDB86800EA82DD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		041505EE2AFDB86800EA82DD /* Build configuration list for PBXNativeTarget "ScryfallZoyaUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				041505EF2AFDB86800EA82DD /* Debug */,
+				041505F02AFDB86800EA82DD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 041505BC2AFDB86600EA82DD /* Project object */;
+}
