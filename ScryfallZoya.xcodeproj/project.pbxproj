@@ -14,6 +14,7 @@
 		041505D92AFDB86800EA82DD /* ScryfallZoyaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041505D82AFDB86800EA82DD /* ScryfallZoyaTests.swift */; };
 		041505E32AFDB86800EA82DD /* ScryfallZoyaUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041505E22AFDB86800EA82DD /* ScryfallZoyaUITests.swift */; };
 		041505E52AFDB86800EA82DD /* ScryfallZoyaUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041505E42AFDB86800EA82DD /* ScryfallZoyaUITestsLaunchTests.swift */; };
+		041505F62AFDBBE500EA82DD /* MTGCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041505F52AFDBBE500EA82DD /* MTGCard.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +45,8 @@
 		041505DE2AFDB86800EA82DD /* ScryfallZoyaUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ScryfallZoyaUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		041505E22AFDB86800EA82DD /* ScryfallZoyaUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScryfallZoyaUITests.swift; sourceTree = "<group>"; };
 		041505E42AFDB86800EA82DD /* ScryfallZoyaUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScryfallZoyaUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		041505F42AFDB90800EA82DD /* WOT-Scryfall.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "WOT-Scryfall.json"; sourceTree = "<group>"; };
+		041505F52AFDBBE500EA82DD /* MTGCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MTGCard.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,10 +97,12 @@
 		041505C62AFDB86600EA82DD /* ScryfallZoya */ = {
 			isa = PBXGroup;
 			children = (
+				041505F42AFDB90800EA82DD /* WOT-Scryfall.json */,
 				041505C72AFDB86600EA82DD /* ScryfallZoyaApp.swift */,
 				041505C92AFDB86600EA82DD /* ContentView.swift */,
 				041505CB2AFDB86800EA82DD /* Assets.xcassets */,
 				041505CD2AFDB86800EA82DD /* Preview Content */,
+				041505F52AFDBBE500EA82DD /* MTGCard.swift */,
 			);
 			path = ScryfallZoya;
 			sourceTree = "<group>";
@@ -258,6 +263,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				041505CA2AFDB86600EA82DD /* ContentView.swift in Sources */,
+				041505F62AFDBBE500EA82DD /* MTGCard.swift in Sources */,
 				041505C82AFDB86600EA82DD /* ScryfallZoyaApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
