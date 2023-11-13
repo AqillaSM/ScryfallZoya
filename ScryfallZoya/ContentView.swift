@@ -115,7 +115,7 @@ struct DetailMTGCardView: View {
             .fullScreenCover(isPresented: $isZoomed) {
                 // Pop-up view to show the larger image
                 ZStack {
-                    Color.black
+                    Color.white
                         .ignoresSafeArea()
 
                     AsyncImage(url: URL(string: card.image_uris?.large ?? "")) { phase in
