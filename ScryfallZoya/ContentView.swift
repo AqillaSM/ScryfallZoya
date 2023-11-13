@@ -85,17 +85,13 @@ struct DetailMTGCardView: View {
                             .font(.largeTitle)
                             .bold()
                             .multilineTextAlignment(.center)
+                            .padding(.bottom, 8)
 
-                        Text("Type:")
-                            .font(.headline)
-                        Text(card.type_line)
+                        // Type Line section with border
+                        TypeSection(title: "Type", content: card.type_line)
 
-                        // Oracle Text section
-                        Text("Oracle Text:")
-                            .font(.headline)
-                            .foregroundColor(.primary)
-                        Text(card.oracle_text)
-                            .multilineTextAlignment(.leading)
+                        // Oracle Text section with border
+                        OracleTextSection(title: "Oracle Text", content: card.oracle_text)
 
                         // Legalities section
                         Text("Legality:")
@@ -104,11 +100,11 @@ struct DetailMTGCardView: View {
                     }
                     .padding()
                     .background(Color.white)
-                    .cornerRadius(16) // Rounded corners
-                    .shadow(radius: 5) // Shadow effect
-                    .padding(.top, 20) // Memberikan padding atas untuk memberikan ruang antara konten dan tombol "Back"
+                    .cornerRadius(16)
+                    .shadow(radius: 5)
+                    .padding(.top, 20)
 
-                    // Spacer untuk memastikan konten berada di atas
+                    // Spacer to ensure content is at the top
                     Spacer()
                 }
             }
@@ -146,11 +142,53 @@ struct DetailMTGCardView: View {
                     }
                 }
             }
-            .navigationBarHidden(true) // Menyembunyikan navigation bar
-            .padding(.top, -16) // Memberikan padding atas untuk memberikan ruang untuk navigation bar
+            .navigationBarHidden(true)
+            .padding(.top, -16)
         }
     }
 }
+
+struct TypeSection: View {
+    var title: String
+    var content: String
+
+    var body: some View {
+        VStack(alignment: .leading) {
+            Text(content)
+                .font(.headline) // Make the font bold
+                .padding()
+                .background(Color.white)
+                .cornerRadius(8)
+        }
+        .foregroundColor(.black)
+        .padding(.vertical, 8)
+    }
+}
+
+
+struct OracleTextSection: View {
+    var title: String
+    var content: String
+
+    var body: some View {
+        VStack(alignment: .leading) {
+            Text(title)
+                .font(.headline)
+                .foregroundColor(.primary)
+                .padding(.leading, 4)
+
+            Text(content)
+                .multilineTextAlignment(.leading)
+                .padding()
+                .background(Color(.systemGray6)) // Use system gray color
+                .cornerRadius(8)
+        }
+        .foregroundColor(.black)
+        .padding(.bottom, 12)
+        .padding(.top, 8)
+    }
+}
+
 
 
 struct ContentView: View {
@@ -387,3 +425,4 @@ struct SearchBar: View {
         }
     }
 }
+
