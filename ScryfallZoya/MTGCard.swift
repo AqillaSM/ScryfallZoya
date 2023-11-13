@@ -8,6 +8,7 @@ struct MTGCard: Codable, Identifiable {
     var oracle_text: String
     var image_uris: ImageURIs?
     var legalities: Legalities
+    var collector_number: String
 
     // Define other properties as needed based on your JSON structure
 
@@ -15,6 +16,9 @@ struct MTGCard: Codable, Identifiable {
         var small: String?
         var normal: String?
         var large: String?
+        var art_crop: String?
+        var border_crop: String?
+        var png: String?
         // Add other image URL properties if needed
     }
     
