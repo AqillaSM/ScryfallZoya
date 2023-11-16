@@ -191,38 +191,34 @@ struct OracleTextSection: View {
     }
 
     private func parseOracleText(_ text: String) -> Text {
-        let components = text.components(separatedBy: CharacterSet(charactersIn: "{}"))
+        let replacedText = text
+            .replacingOccurrences(of: "{U}", with: "💧")
+            .replacingOccurrences(of: "\"{T}", with: "↩️")
+            .replacingOccurrences(of: "{B}", with: "💀")
+            .replacingOccurrences(of: "{W/B}", with: "☀️")
+            .replacingOccurrences(of: "{1}", with: "1️⃣")
+            .replacingOccurrences(of: "{2}", with: "2️⃣")
+            .replacingOccurrences(of: "{3}", with: "3️⃣")
+            .replacingOccurrences(of: "{4}", with: "4️⃣")
+            .replacingOccurrences(of: "{5}", with: "5️⃣")
+            .replacingOccurrences(of: "{6}", with: "6️⃣")
+            .replacingOccurrences(of: "{7}", with: "7️⃣")
+            .replacingOccurrences(of: "{8}", with: "8️⃣")
+            .replacingOccurrences(of: "{9}", with: "9️⃣")
+            .replacingOccurrences(of: "{0}", with: "0️⃣")
+            .replacingOccurrences(of: "{R}", with: "🔥")
+            .replacingOccurrences(of: "{G}", with: "🌲")
+            .replacingOccurrences(of: "{W}", with: "☀️")
+        let components = replacedText.components(separatedBy: CharacterSet(charactersIn: "()"))
         var parsedText = Text("")
         for (index, component) in components.enumerated() {
             if index % 2 != 0 {
-                parsedText = parsedText + parseEmoticons(component)
+                parsedText = parsedText + Text(component)
                     .italic() // Membuat teks dalam kurung kurawal menjadi italic
             } else {
                 parsedText = parsedText + Text(component)
             }
         }
-        return parsedText
-    }
-
-    private func parseEmoticons(_ text: String) -> Text {
-        var parsedText = Text("")
-        let replacedText = text
-            .replacingOccurrences(of: "U", with: "💧")
-            .replacingOccurrences(of: "W/B", with: "💀")
-            .replacingOccurrences(of: "T", with: "↩️")
-            .replacingOccurrences(of: "W", with: "☀️")
-            .replacingOccurrences(of: "1", with: "1️⃣")
-            .replacingOccurrences(of: "2", with: "2️⃣")
-            .replacingOccurrences(of: "3", with: "3️⃣")
-            .replacingOccurrences(of: "4", with: "4️⃣")
-            .replacingOccurrences(of: "5", with: "5️⃣")
-            .replacingOccurrences(of: "6", with: "6️⃣")
-            .replacingOccurrences(of: "7", with: "7️⃣")
-            .replacingOccurrences(of: "8", with: "8️⃣")
-            .replacingOccurrences(of: "9", with: "9️⃣")
-            .replacingOccurrences(of: "0", with: "0️⃣")
-
-        parsedText = Text(replacedText)
         return parsedText
     }
 }
