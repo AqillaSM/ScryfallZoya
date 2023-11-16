@@ -9,6 +9,7 @@ struct MTGCard: Codable, Identifiable {
     var image_uris: ImageURIs?
     var legalities: Legalities
     var collector_number: String
+    var rarity: String
 
     // Define other properties as needed based on your JSON structure
 
