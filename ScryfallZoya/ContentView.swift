@@ -30,9 +30,11 @@ struct MTGCardView: View {
 
                 // Display card name with smaller font size
                 Text(card.name)
-                    .font(.title3) // Adjust the font size as needed
+                    .font(.headline) // Adjust the font size as needed
+                    .foregroundColor(.black)
                     .padding()
             }
+
         }
     }
 }
@@ -177,7 +179,7 @@ struct OracleTextSection: View {
                 .foregroundColor(.primary)
                 .padding(.leading, 4)
 
-            Text(content)
+            parseOracleText(content)
                 .multilineTextAlignment(.leading)
                 .padding()
                 .background(Color(.systemGray6)) // Use system gray color
@@ -187,7 +189,45 @@ struct OracleTextSection: View {
         .padding(.bottom, 12)
         .padding(.top, 8)
     }
+
+    private func parseOracleText(_ text: String) -> Text {
+        let components = text.components(separatedBy: CharacterSet(charactersIn: "{}"))
+        var parsedText = Text("")
+        for (index, component) in components.enumerated() {
+            if index % 2 != 0 {
+                parsedText = parsedText + parseEmoticons(component)
+                    .italic() // Membuat teks dalam kurung kurawal menjadi italic
+            } else {
+                parsedText = parsedText + Text(component)
+            }
+        }
+        return parsedText
+    }
+
+    private func parseEmoticons(_ text: String) -> Text {
+        var parsedText = Text("")
+        let replacedText = text
+            .replacingOccurrences(of: "U", with: "💧")
+            .replacingOccurrences(of: "W/B", with: "💀")
+            .replacingOccurrences(of: "T", with: "↩️")
+            .replacingOccurrences(of: "W", with: "☀️")
+            .replacingOccurrences(of: "1", with: "1️⃣")
+            .replacingOccurrences(of: "2", with: "2️⃣")
+            .replacingOccurrences(of: "3", with: "3️⃣")
+            .replacingOccurrences(of: "4", with: "4️⃣")
+            .replacingOccurrences(of: "5", with: "5️⃣")
+            .replacingOccurrences(of: "6", with: "6️⃣")
+            .replacingOccurrences(of: "7", with: "7️⃣")
+            .replacingOccurrences(of: "8", with: "8️⃣")
+            .replacingOccurrences(of: "9", with: "9️⃣")
+            .replacingOccurrences(of: "0", with: "0️⃣")
+
+        parsedText = Text(replacedText)
+        return parsedText
+    }
 }
+
+
 
 
 
@@ -196,6 +236,7 @@ struct ContentView: View {
     @State private var isSortedAscending = true
     @State private var sortOption: SortOption = .name
     @State private var searchText = ""
+    @State private var isContentVisible = false
 
     let columns = [
         GridItem(.flexible(), spacing: 16),
@@ -214,8 +255,10 @@ struct ContentView: View {
     var body: some View {
         NavigationView {
             ZStack(alignment: .top) {
+                // Konten akan muncul dengan animasi fading saat tampilan dimuat
                 VStack {
                     SearchBar(searchText: $searchText)
+                        .opacity(isContentVisible ? 1 : 0) // Kontrol transparansi
 
                     Spacer()
 
@@ -234,6 +277,9 @@ struct ContentView: View {
                                     let decoder = JSONDecoder()
                                     let cards = try decoder.decode(MTGCardList.self, from: data)
                                     mtgCards = cards.data.sorted { $0.collector_number < $1.collector_number }
+                                    withAnimation(.easeInOut) {
+                                        isContentVisible = true // Setelah konten dimuat, tampilkan dengan animasi
+                                    }
                                 } catch {
                                     print("Error decoding JSON: \(error)")
                                 }
@@ -241,6 +287,7 @@ struct ContentView: View {
                         }
                     }
                 }
+                .opacity(isContentVisible ? 1 : 0) // Kontrol transparansi
                 .navigationBarTitle("MTG Cards", displayMode: .inline)
                 .zIndex(0) // Keep the VStack below
 
@@ -261,7 +308,7 @@ struct ContentView: View {
                                     .stroke(Color.white, lineWidth: 2)
                                     .background(
                                         RoundedRectangle(cornerRadius: 8)
-                                            .fill(Color.blue) // Latar belakang berwarna biru
+                                            .fill(Color.black) // Latar belakang berwarna biru
                                             .shadow(color: Color.black.opacity(0.3), radius: 5, x: 0, y: 5) // Efek shadow
                                     )
                             )
@@ -277,7 +324,7 @@ struct ContentView: View {
                                     .stroke(Color.white, lineWidth: 2)
                                     .background(
                                         RoundedRectangle(cornerRadius: 8)
-                                            .fill(Color.blue) // Latar belakang berwarna biru
+                                            .fill(Color.black) // Latar belakang berwarna biru
                                             .shadow(color: Color.black.opacity(0.3), radius: 5, x: 0, y: 5) // Efek shadow
                                     )
                             )
@@ -291,7 +338,7 @@ struct ContentView: View {
                                         .stroke(Color.white, lineWidth: 2)
                                         .background(
                                             RoundedRectangle(cornerRadius: 8)
-                                                .fill(Color.blue) // Latar belakang berwarna biru
+                                                .fill(Color.black) // Latar belakang berwarna biru
                                                 .shadow(color: Color.black.opacity(0.3), radius: 5, x: 0, y: 5) // Efek shadow
                                         )
                                 )
