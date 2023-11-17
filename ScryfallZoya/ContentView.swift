@@ -36,7 +36,9 @@ struct MTGCardView: View {
             }
 
         }
+        
     }
+    
 }
 
 struct DetailMTGCardView: View {
@@ -88,6 +90,31 @@ struct DetailMTGCardView: View {
                             .bold()
                             .multilineTextAlignment(.center)
                             .padding(.bottom, 8)
+                        
+                        let replacedText = (card.mana_cost)
+                            .replacingOccurrences(of: "{U}", with: " 💧 ")
+                            .replacingOccurrences(of: "\"{T}", with: " ↩️ ")
+                            .replacingOccurrences(of: "{B}", with: " 💀 ")
+                            .replacingOccurrences(of: "{W/B}", with: " ☀️ ")
+                            .replacingOccurrences(of: "{1}", with: " 1️⃣ ")
+                            .replacingOccurrences(of: "{2}", with: " 2️⃣ ")
+                            .replacingOccurrences(of: "{3}", with: " 3️⃣ ")
+                            .replacingOccurrences(of: "{4}", with: " 4️⃣ ")
+                            .replacingOccurrences(of: "{5}", with: " 5️⃣ ")
+                            .replacingOccurrences(of: "{6}", with: " 6️⃣ ")
+                            .replacingOccurrences(of: "{7}", with: " 7️⃣ ")
+                            .replacingOccurrences(of: "{8}", with: " 8️⃣ ")
+                            .replacingOccurrences(of: "{9}", with: " 9️⃣ ")
+                            .replacingOccurrences(of: "{0}", with: " 0️⃣ ")
+                            .replacingOccurrences(of: "{R}", with: " 🔥 ")
+                            .replacingOccurrences(of: "{G}", with: " 🌲 ")
+                            .replacingOccurrences(of: "{W}", with: " ☀️ ")
+                        Text(replacedText) // Directly using card.mana_cost
+                            .font(.subheadline)
+                            .padding(4)
+                            .background(Color.white)
+                            .foregroundColor(.white)
+                            .cornerRadius(4)
 
                         // Type Line section with border
                         TypeSection(title: "Type", content: card.type_line)
