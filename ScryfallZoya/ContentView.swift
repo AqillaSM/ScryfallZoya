@@ -49,6 +49,7 @@ struct MTGCardView: View {
 struct DetailMTGCardView: View {
     @State private var isZoomed = false
     var card: MTGCard
+    
 
     var body: some View {
         NavigationView {
@@ -148,6 +149,8 @@ struct DetailMTGCardView: View {
                     Spacer()
                 }
             }
+            
+            
             .fullScreenCover(isPresented: $isZoomed) {
                 // Pop-up view to show the larger image
                 ZStack {
@@ -182,6 +185,7 @@ struct DetailMTGCardView: View {
                     }
                 }
             }
+            
             .navigationBarHidden(true)
             .padding(.top, -16)
         }
@@ -261,10 +265,6 @@ struct OracleTextSection: View {
     }
 }
 
-
-
-
-
 struct ContentView: View {
     @State private var mtgCards: [MTGCard] = []
     @State private var isSortedAscending = true
@@ -294,6 +294,7 @@ struct ContentView: View {
                 VStack {
                         HStack {
                             VStack {
+                                
                                 SearchBar(searchText: $searchText)
                                     .opacity(isContentVisible ? 1 : 0) // Atur padding horizontal di dalam HStack
                                     .padding(.top, 30)
@@ -353,15 +354,19 @@ struct ContentView: View {
                 }
                 .opacity(isContentVisible ? 1 : 0) // Control transparency
                 .navigationBarItems(leading:
+                                        
                     // Navigation bar content
                     HStack {
-                        Spacer().frame(width: 16) // Set width of space as needed
+                        Spacer().frame(width: 10, height: 100) // Set width of space as needed
+                        Spacer()
                         Image("MTGName")
                             .resizable()
                             .frame(width: 206, height: 69) // Adjust size as needed
                     }
                     .padding(.top, 20)
+                    .padding(.bottom, 20)
                 )
+                
                 .zIndex(0) // Keep the VStack below
                 .tabItem {
                     Label("Menu", systemImage: "house")
