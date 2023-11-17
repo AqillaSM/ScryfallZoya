@@ -5,40 +5,45 @@ struct MTGCardView: View {
     
     var body: some View {
         NavigationLink(destination: DetailMTGCardView(card: card)) {
-            VStack {
+            VStack(spacing: 0) {
                 // Display card image
-                AsyncImage(url: URL(string: card.image_uris?.large ?? "")) { phase in
+                AsyncImage(url: URL(string: card.image_uris?.normal ?? "")) { phase in
                     switch phase {
                     case .success(let image):
                         image
                             .resizable()
-                            .aspectRatio(contentMode: .fit) // Menambahkan aspectRatio
-                            .frame(width: 150, height: 200) // Menetapkan lebar dan tinggi kartu
+                            .aspectRatio(contentMode: .fit)
+                            .frame(width: 100, height: 150)
+                            .clipShape(RoundedRectangle(cornerRadius: 0))
                     case .failure:
                         Image(systemName: "exclamationmark.triangle")
                             .resizable()
                             .aspectRatio(contentMode: .fit)
-                            .frame(width: 150, height: 200)
+                            .frame(width: 100, height: 150)
                             .foregroundColor(.red)
+                            .clipShape(RoundedRectangle(cornerRadius: 0))
                     case .empty:
                         ProgressView()
+                            .frame(width: 100, height: 150)
+                            .clipShape(RoundedRectangle(cornerRadius: 0))
                     @unknown default:
                         ProgressView()
+                            .frame(width: 100, height: 150)
+                            .clipShape(RoundedRectangle(cornerRadius: 0))
                     }
                 }
-                .padding()
+                Spacer()
 
                 // Display card name with smaller font size
                 Text(card.name)
-                    .font(.headline) // Adjust the font size as needed
+                    .font(.footnote) // Change the font size as needed
                     .foregroundColor(.black)
-                    .padding()
+                
+                Spacer()
             }
-
         }
-        
+        .padding(.horizontal)
     }
-    
 }
 
 struct DetailMTGCardView: View {
@@ -50,7 +55,7 @@ struct DetailMTGCardView: View {
             ScrollView {
                 VStack {
                     // Display larger card image in the detail view
-                    AsyncImage(url: URL(string: card.image_uris?.large ?? "")) { phase in
+                    AsyncImage(url: URL(string: card.image_uris?.art_crop ?? "")) { phase in
                         switch phase {
                         case .success(let image):
                             image
@@ -85,36 +90,42 @@ struct DetailMTGCardView: View {
 
                     // Display all card data
                     VStack(alignment: .leading, spacing: 12) {
-                        Text("\(card.name)")
-                            .font(.largeTitle)
-                            .bold()
-                            .multilineTextAlignment(.center)
-                            .padding(.bottom, 8)
-                        
-                        let replacedText = (card.mana_cost)
-                            .replacingOccurrences(of: "{U}", with: " 💧 ")
-                            .replacingOccurrences(of: "\"{T}", with: " ↩️ ")
-                            .replacingOccurrences(of: "{B}", with: " 💀 ")
-                            .replacingOccurrences(of: "{W/B}", with: " ☀️ ")
-                            .replacingOccurrences(of: "{1}", with: " 1️⃣ ")
-                            .replacingOccurrences(of: "{2}", with: " 2️⃣ ")
-                            .replacingOccurrences(of: "{3}", with: " 3️⃣ ")
-                            .replacingOccurrences(of: "{4}", with: " 4️⃣ ")
-                            .replacingOccurrences(of: "{5}", with: " 5️⃣ ")
-                            .replacingOccurrences(of: "{6}", with: " 6️⃣ ")
-                            .replacingOccurrences(of: "{7}", with: " 7️⃣ ")
-                            .replacingOccurrences(of: "{8}", with: " 8️⃣ ")
-                            .replacingOccurrences(of: "{9}", with: " 9️⃣ ")
-                            .replacingOccurrences(of: "{0}", with: " 0️⃣ ")
-                            .replacingOccurrences(of: "{R}", with: " 🔥 ")
-                            .replacingOccurrences(of: "{G}", with: " 🌲 ")
-                            .replacingOccurrences(of: "{W}", with: " ☀️ ")
-                        Text(replacedText) // Directly using card.mana_cost
-                            .font(.subheadline)
-                            .padding(4)
-                            .background(Color.white)
-                            .foregroundColor(.white)
-                            .cornerRadius(4)
+                        HStack {
+                            Text("\(card.name)")
+                                .font(.largeTitle)
+                                .bold()
+                                .multilineTextAlignment(.center)
+                                .padding(.bottom, 8)
+                            
+                            Spacer()
+                            
+                            let replacedText = (card.mana_cost)
+                                .replacingOccurrences(of: "{U}", with: "💧")
+                                .replacingOccurrences(of: "\"{T}", with: "↩️")
+                                .replacingOccurrences(of: "{B}", with: "💀")
+                                .replacingOccurrences(of: "{W/B}", with: "☀️")
+                                .replacingOccurrences(of: "{1}", with: "1️⃣")
+                                .replacingOccurrences(of: "{2}", with: "2️⃣")
+                                .replacingOccurrences(of: "{3}", with: "3️⃣")
+                                .replacingOccurrences(of: "{4}", with: "4️⃣")
+                                .replacingOccurrences(of: "{5}", with: "5️⃣")
+                                .replacingOccurrences(of: "{6}", with: "6️⃣")
+                                .replacingOccurrences(of: "{7}", with: "7️⃣")
+                                .replacingOccurrences(of: "{8}", with: "8️⃣")
+                                .replacingOccurrences(of: "{9}", with: "9️⃣")
+                                .replacingOccurrences(of: "{0}", with: "0️⃣")
+                                .replacingOccurrences(of: "{R}", with: "🔥")
+                                .replacingOccurrences(of: "{G}", with: "🌲")
+                                .replacingOccurrences(of: "{W}", with: "☀️")
+                            Text(replacedText)
+                                .font(.subheadline)
+                                .padding(4)
+                                .background(Color.white)
+                                .foregroundColor(.black)
+                                .cornerRadius(4)
+                            
+                        }
+
 
                         // Type Line section with border
                         TypeSection(title: "Type", content: card.type_line)
@@ -260,13 +271,14 @@ struct ContentView: View {
     @State private var sortOption: SortOption = .name
     @State private var searchText = ""
     @State private var isContentVisible = false
-
+    @State private var selectedTab = 0
+    
     let columns = [
         GridItem(.flexible(), spacing: 16),
         GridItem(.flexible(), spacing: 16),
         GridItem(.flexible(), spacing: 16)
     ]
-
+    
     var filteredMTGCards: [MTGCard] {
         if searchText.isEmpty {
             return mtgCards
@@ -274,16 +286,43 @@ struct ContentView: View {
             return mtgCards.filter { $0.name.localizedCaseInsensitiveContains(searchText) }
         }
     }
-
+    
     var body: some View {
         NavigationView {
-            ZStack(alignment: .top) {
-                // Konten akan muncul dengan animasi fading saat tampilan dimuat
+            TabView(selection: $selectedTab) {
+                // Menu Tab
                 VStack {
-                    SearchBar(searchText: $searchText)
-                        .opacity(isContentVisible ? 1 : 0) // Kontrol transparansi
-
-                    Spacer()
+                        HStack {
+                            VStack {
+                                SearchBar(searchText: $searchText)
+                                    .opacity(isContentVisible ? 1 : 0) // Atur padding horizontal di dalam HStack
+                                    .padding(.top, 30)
+                                    .padding(.bottom, -40)
+                                Menu {
+                                    Button(action: { sortOption = .name; sort() }) {
+                                        Label("Sort by Name", systemImage: "arrow.up.arrow.down")
+                                    }
+                                    .foregroundColor(.black)
+                                    
+                                    Button(action: { sortOption = .number; sort() }) {
+                                        Label("Sort by Number", systemImage: "arrow.up.arrow.down")
+                                    }
+                                    .foregroundColor(.black)
+                                    
+                                    // Tambahkan kode desain dan aksi lain yang diperlukan untuk sort by number
+                                } label: {
+                                    Label("Sort", systemImage: "arrow.up.arrow.down")
+                                        .foregroundColor(.black)
+                                    // Tambahkan kode desain dan aksi lain yang diperlukan untuk sort
+                                }
+                                .padding(.bottom, 20)
+                                .padding()
+                                .offset(y: 25)
+                                .padding(.trailing, 10)
+                            }// Memberikan padding kanan pada Menu
+                        }
+                        .padding(.horizontal) // Menambahkan padding horizontal di luar HStack
+                        Spacer()
 
                     ScrollView {
                         LazyVGrid(columns: columns, spacing: 16) {
@@ -295,13 +334,14 @@ struct ContentView: View {
                             }
                         }
                         .onAppear {
+                            // Load JSON data and display content with animation once loaded
                             if let data = loadJSON() {
                                 do {
                                     let decoder = JSONDecoder()
                                     let cards = try decoder.decode(MTGCardList.self, from: data)
                                     mtgCards = cards.data.sorted { $0.collector_number < $1.collector_number }
                                     withAnimation(.easeInOut) {
-                                        isContentVisible = true // Setelah konten dimuat, tampilkan dengan animasi
+                                        isContentVisible = true
                                     }
                                 } catch {
                                     print("Error decoding JSON: \(error)")
@@ -309,72 +349,73 @@ struct ContentView: View {
                             }
                         }
                     }
+                    Divider()
                 }
-                .opacity(isContentVisible ? 1 : 0) // Kontrol transparansi
-                .navigationBarTitle("MTG Cards", displayMode: .inline)
+                .opacity(isContentVisible ? 1 : 0) // Control transparency
+                .navigationBarItems(leading:
+                    // Navigation bar content
+                    HStack {
+                        Spacer().frame(width: 16) // Set width of space as needed
+                        Image("MTGName")
+                            .resizable()
+                            .frame(width: 206, height: 69) // Adjust size as needed
+                    }
+                    .padding(.top, 20)
+                )
                 .zIndex(0) // Keep the VStack below
-
+                .tabItem {
+                    Label("Menu", systemImage: "house")
+                }
+                .tag(0)
+                
+                // Collection Tab
+                VStack {
+                    Text("Under Progress")
+                }
+                .tabItem {
+                    Label("Collection", systemImage: "folder")
+                }
+                .tag(1)
+                
+                // Account Tab
                 VStack {
                     Spacer()
-                    HStack {
-                        Spacer()
-                        
-                        // Sort button with dropdown menu
-                        Menu {
-                            Button(action: { sortOption = .name; sort() }) {
-                                Label("Sort by Name", systemImage: "arrow.up.arrow.down")
-                            }
-                            .foregroundColor(.white)
-                            .padding()
-                            .background(
-                                RoundedRectangle(cornerRadius: 8)
-                                    .stroke(Color.white, lineWidth: 2)
-                                    .background(
-                                        RoundedRectangle(cornerRadius: 8)
-                                            .fill(Color.black) // Latar belakang berwarna biru
-                                            .shadow(color: Color.black.opacity(0.3), radius: 5, x: 0, y: 5) // Efek shadow
-                                    )
-                            )
-                            .padding(.bottom, 10) // Tambahkan padding ke bawah agar tombol melayang di sudut kanan bawah
-
-                            Button(action: { sortOption = .number; sort() }) {
-                                Label("Sort by Number", systemImage: "arrow.up.arrow.down")
-                            }
-                            .foregroundColor(.white)
-                            .padding()
-                            .background(
-                                RoundedRectangle(cornerRadius: 8)
-                                    .stroke(Color.white, lineWidth: 2)
-                                    .background(
-                                        RoundedRectangle(cornerRadius: 8)
-                                            .fill(Color.black) // Latar belakang berwarna biru
-                                            .shadow(color: Color.black.opacity(0.3), radius: 5, x: 0, y: 5) // Efek shadow
-                                    )
-                            )
-                            .padding(.bottom, 10) // Tambahkan padding ke bawah agar tombol melayang di sudut kanan bawah
-                        } label: {
-                            Label("Sort", systemImage: "arrow.up.arrow.down")
-                                .foregroundColor(.white)
-                                .padding()
-                                .background(
-                                    RoundedRectangle(cornerRadius: 8)
-                                        .stroke(Color.white, lineWidth: 2)
-                                        .background(
-                                            RoundedRectangle(cornerRadius: 8)
-                                                .fill(Color.black) // Latar belakang berwarna biru
-                                                .shadow(color: Color.black.opacity(0.3), radius: 5, x: 0, y: 5) // Efek shadow
-                                        )
-                                )
-                                .padding(.bottom, 10) // Tambahkan padding ke bawah agar tombol melayang di sudut kanan bawah
-                        }
-                        .padding()
-                    }
-                    .padding()
+                    
+                    // Profile Picture
+                    Image(systemName: "person.circle.fill")
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                        .frame(width: 100, height: 100)
+                        .foregroundColor(.black)
+                        .padding(.bottom, 20)
+                    
+                    // Username/Name
+                    Text("Mahazoya")
+                        .font(.title)
+                        .fontWeight(.bold)
+                        .padding(.bottom, 10)
+                    
+                    // Email
+                    Text("mahazoya@example.com")
+                        .font(.subheadline)
+                        .foregroundColor(.gray)
+                        .padding(.bottom, 30)
+                    
+                    Spacer()
                 }
+                .padding()
+                .navigationBarTitle("Account")
+                .tabItem {
+                    Label("Account", systemImage: "person.crop.circle")
+                }
+                .tag(2)
             }
         }
+        
     }
+    
 
+    
     func loadJSON() -> Data? {
         if let path = Bundle.main.path(forResource: "WOT-Scryfall", ofType: "json") {
             do {
@@ -387,13 +428,13 @@ struct ContentView: View {
         }
         return nil
     }
-
+    
     // Enum for sorting options
     enum SortOption {
         case name
         case number
     }
-
+    
     private func sort() {
         isSortedAscending.toggle()
         switch sortOption {
@@ -431,33 +472,35 @@ struct LegalitiesView: View {
                 legalityRow("Modern", legalities.modern)
                 legalityRow("Legacy", legalities.legacy)
                 legalityRow("Pauper", legalities.pauper)
-                legalityRow("predh", legalities.predh)
+                legalityRow("Predh", legalities.predh)
             }
 
             VStack(alignment: .leading) {
                 legalityRow("Vintage", legalities.vintage)
                 legalityRow("Penny", legalities.penny)
                 legalityRow("Commander", legalities.commander)
-                legalityRow("brawl", legalities.brawl)
-                legalityRow("historicbrawl", legalities.historicbrawl)
-                legalityRow("alchemy", legalities.alchemy)
-                legalityRow("paupercommander", legalities.paupercommander)
-                legalityRow("duel", legalities.duel)
-                legalityRow("oldschool", legalities.oldschool)
-                legalityRow("premodern", legalities.premodern)
+                legalityRow("Brawl", legalities.brawl)
+                legalityRow("Historicbrawl", legalities.historicbrawl)
+                legalityRow("Alchemy", legalities.alchemy)
+                legalityRow("Paupercommander", legalities.paupercommander)
+                legalityRow("Duel", legalities.duel)
+                legalityRow("Oldschool", legalities.oldschool)
+                legalityRow("Premodern", legalities.premodern)
             }
         }
     }
 
     private func legalityRow(_ title: String, _ status: String) -> some View {
-        HStack {
+        let formattedStatus = status == "not_legal" ? "Not Legal" : status.capitalized
+        
+        return HStack {
             Text("\(title):")
                 .font(.subheadline)
                 .foregroundColor(.primary)
             
             Spacer()
 
-            Text(status)
+            Text(formattedStatus)
                 .font(.subheadline)
                 .padding(4)
                 .foregroundColor(.white)
@@ -466,6 +509,7 @@ struct LegalitiesView: View {
         }
         .padding(.vertical, 4)
     }
+
 
     private func legalityColor(_ status: String) -> Color {
         return status == "legal" ? .green : .red
@@ -495,3 +539,4 @@ struct SearchBar: View {
         }
     }
 }
+

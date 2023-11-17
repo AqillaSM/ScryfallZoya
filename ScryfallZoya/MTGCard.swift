@@ -11,6 +11,7 @@ struct MTGCard: Codable, Identifiable {
     var collector_number: String
     var rarity: String
     var mana_cost: String
+    
 
     // Define other properties as needed based on your JSON structure
 
